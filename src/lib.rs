@@ -11,9 +11,7 @@ pub const MyEnum_ENUM_VALUE_ONE: MyEnum = 1;
 pub const MyEnum_ENUM_VALUE_TWO: MyEnum = 2;
 pub const MyEnum_ENUM_VALUE_THREE: MyEnum = 3;
 pub type MyEnum = ::std::os::raw::c_uint;
-unsafe extern "C" {
-    pub static GLOBAL_VARIABLE: ::std::os::raw::c_int; // <- note we see here, that unsafe will be required to read the static global (ingo)
-}
+pub const GLOBAL_VARIABLE: ::std::os::raw::c_int = 4;
 */
 
 #[cfg(test)]
@@ -39,7 +37,7 @@ mod tests {
         assert_eq!(MyEnum_ENUM_VALUE_THREE as i32, 3);
 
         // const global variable
-        assert_eq!(unsafe { GLOBAL_VARIABLE }, 4);
+        assert_eq!(GLOBAL_VARIABLE, 4);
 
     }
 }

@@ -10,6 +10,6 @@ enum MyEnum {
     ENUM_VALUE_THREE = 3,
 };
 
-const int GLOBAL_VARIABLE;
+const int GLOBAL_VARIABLE = 4;
 
 #endif
