@@ -19,7 +19,9 @@ fn main() {
     // Also link the C file that defines the global variable
     // (Only necessary if you actually use the global variable)
     cc::Build::new()
-        .file("extern/definition.c")   // your C file
+        .file("extern/definition.c")    // your C file
+        .file("extern/definition2.c")   // your C file
         .compile("code");        // library name: libvalue.a or value.lib
     println!("cargo:rerun-if-changed=extern/definition.c");
+    println!("cargo:rerun-if-changed=extern/definition2.c");
 }
