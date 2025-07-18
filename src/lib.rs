@@ -39,5 +39,7 @@ mod tests {
         // const global variable
         assert_eq!(GLOBAL_VARIABLE, 4);
 
+        unsafe { __force_to_compile_this_file2(); }
+
     }
 }

@@ -10,6 +10,10 @@ enum MyEnum {
     ENUM_VALUE_THREE = 3,
 };
 
-const int GLOBAL_VARIABLE = 4;
+// This does not work without `static`
+// const int GLOBAL_VARIABLE = 4;
+static const int GLOBAL_VARIABLE = 4;
+
+int __force_to_compile_this_file2();
 
 #endif

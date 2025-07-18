@@ -24,4 +24,5 @@ fn main() {
         .compile("code");        // library name: libvalue.a or value.lib
     println!("cargo:rerun-if-changed=extern/definition.c");
     println!("cargo:rerun-if-changed=extern/definition2.c");
+    println!("cargo:rerun-if-changed=extern/header.h");
 }
